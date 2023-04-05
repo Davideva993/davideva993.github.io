@@ -628,7 +628,7 @@
       function isCardAlmostVisible(card) {
 
             const rect = card.getBoundingClientRect()
-            if (rect.top - window.innerHeight < 500) {
+            if (rect.top - window.innerHeight < 200) {
                   if (card.id == "photographerCard" && photographerEventExecutedYet) {
                         return
                   }
