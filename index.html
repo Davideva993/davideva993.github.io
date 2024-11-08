@@ -229,14 +229,31 @@
 
 
       // zoom on cart img----------------------------------------------------------------------------
-      for (let i = 0; i < document.getElementsByClassName("cartImg").length; i++) {
-            document.getElementsByClassName("cartImg")[i].addEventListener("click", (e) => {
-                  document.getElementById(e.target.id).style.transform = "scale(1.25)";
-                  setTimeout(() => {
-                        document.getElementById(e.target.id).style.transform = "scale(1)";
-                  }, 4000)
-            })
-      }
+        const cartImages = document.getElementsByClassName("cartImg");
+if(window.innerWidth>1300){
+for (let i = 0; i < cartImages.length; i++) {
+    const cartImg = cartImages[i];
+    const originalWidth = cartImg.style.width;
+
+    cartImg.addEventListener("mousedown", (e) => {
+        const target = e.target;
+          target.style.position="absolute"
+
+        target.style.width = "90%";
+
+        target.addEventListener("mouseup", function handleMouseUp() {
+            target.style.width = originalWidth;
+              target.style.position="relative"
+            target.removeEventListener("mouseup", handleMouseUp);
+        });
+                  target.addEventListener("mousemove", function handleMouseUp() {
+            //description.style.display = "block";
+            target.style.width = originalWidth;
+              target.style.position="relative"
+            target.removeEventListener("mouseup", handleMouseUp);
+        });
+    });
+}}
 
 
 
