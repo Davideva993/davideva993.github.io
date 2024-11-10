@@ -198,6 +198,23 @@
                   </span>
                   <button class="changeCardBtn" id="ecommerceBtn">En savoir plus...</button>
             </span>
+            <span id="shoppingListCard" class="projectContainers fullstack">
+                  <h2>Interactive shopping list </h2>
+                  <span class="internalProjectContainers">
+                        <img id="shoppingListImg" src="./media/shoppingList/shoppingList.png" alt="'video site" class="cartImg">
+                        <h3 id="shoppingListDescription">
+                              J'ai réalisé une liste de courses interactive et partagée. <br>
+                              Les utilisateurs peuvent créer une liste de courses de groupe et tous les membres de ce groupe peuvent ajouter des articles (en choisissant la couleur ou en laissant faire au site) et les éliminer.
+                              Ils peuvent également utiliser une fonctionnalité pour avoir le total des articles achetés en temps réel. Ils peuvent enregistrer les bonnes occasions localement et ils ont à leur disposition un calculateur.
+                              Le <strong>Backend</strong> a été fait grâce à <strong>Node.js</strong>, <strong>npm</strong>, <strong>express</strong>,
+                              <strong>helmet</strong>, <strong>mongoose</strong>, <strong>dotenv</strong>, <strong>path</strong>. La base de données utilisée est <strong>MongoDB</strong>.
+                              <br>
+                              <strong>Côté Frontend</strong>, j'ai utilisé <strong>JavaScript</strong>,
+                              <strong>HTML</strong> et <strong>CSS</strong>.
+                          </h3>
+                  </span>
+                  <button class="changeCardBtn" id="shoppingListBtn">En savoir plus...</button>
+            </span>
 
 
 
@@ -226,40 +243,52 @@
       let originalEcommerceDescription = document.getElementById("ecommerceDescription").innerHTML
       let originalPhotographerDescription = document.getElementById("photographerDescription").innerHTML
       let originalTictactoeDescription = document.getElementById("tictactoeDescription").innerHTML
+      let originalShoppingListDescription = document.getElementById("shoppingListDescription").innerHTML
+
 
 
       // zoom on cart img----------------------------------------------------------------------------
-        const cartImages = document.getElementsByClassName("cartImg");
-if(window.innerWidth>1300){
-for (let i = 0; i < cartImages.length; i++) {
-    const cartImg = cartImages[i];
-    const originalWidth = cartImg.style.width;
+      const cartImages = document.getElementsByClassName("cartImg");
+if (window.innerWidth > 1300) {
+    for (let i = 0; i < cartImages.length; i++) {
+        const cartImg = cartImages[i];
+        const originalWidth = cartImg.style.width
+        const originalPosition = getComputedStyle(cartImg).position; 
+        const originalZIndex = getComputedStyle(cartImg).zIndex; 
 
-    cartImg.addEventListener("mousedown", (e) => {
-        const target = e.target;
-          target.style.position="fixed"
-          target.style.top="10px"
+        cartImg.addEventListener("mousedown", (e) => {
+            const target = e.target;
+            target.style.position = "fixed";
+            target.style.top = "10px";
+            target.style.left = "5%";
+            target.style.width = "90%";
+            target.style.maxHeight = "90%";
+            target.style.zIndex = "1";
 
-        target.style.width = "90%";
-
-        target.addEventListener("mouseup", function handleMouseUp() {
-            target.style.width = originalWidth;
-              target.style.position="relative"
-            target.removeEventListener("mouseup", handleMouseUp);
+            const handleMouseUp = function() {
+                target.style.width = originalWidth
+                target.style.position = originalPosition
+                target.style.zIndex = originalZIndex;
+                target.removeEventListener("mouseup", handleMouseUp);
+                target.removeEventListener("mousemove", handleMouseMove);
+            };
+            const handleMouseMove = function() {
+            };
+            target.addEventListener("mouseup", handleMouseUp);
+            target.addEventListener("mousemove", handleMouseMove);
         });
-                  target.addEventListener("mousemove", function handleMouseUp() {
-            //description.style.display = "block";
-            target.style.width = originalWidth;
-              target.style.position="relative"
-            target.removeEventListener("mouseup", handleMouseUp);
-        });
-    });
-}}
+    }
+}
 
 
 
       // change cart database------------------------------------------------------------------------
       let allCardsInfo = {
+            shoppingListSite: {
+                  'description': [originalShoppingListDescription, "La liste", "L'utilisateur peut sélectionner une couleur ou activer le 'mode automatique', qui choisit automatiquement une couleur appropriée en fonction de la catégorie de l'article si possible", "L'utilisateur peut enregistrer un article considéré comme une bonne affaire en ajoutant également une brève description", "L'utilisateur peut laisser un message sur le post-it présent dans chaque liste de courses de groupe, le lire ou le modifier", "Un calculateur est disponible pour l'utilisateur" ],
+                  'src': ['./media/shoppingList/shoppingList.gif', './media/shoppingList/shoppingList.png', './media/shoppingList/shoppingListColors.png', './media/shoppingList/shoppingListSave.png', './media/shoppingList/shoppingListMessage.png', './media/shoppingList/shoppingListCalc.png'],
+                  'alt': ['video shopping list website', 'la liste', "choisir une couleur", 'enregistrer une occasion', 'envoyer, lire ou effacer un message','le calcolateur' ]
+            },
             travelSite: {
                   'description': [originalTravelDescription, "Version ordinateur", 'Version mobile'],
                   'src': ['./media/travel/travelsite.gif', './media/travel/desktop.png', './media/travel/mobile.png'],
@@ -336,6 +365,7 @@ for (let i = 0; i < cartImages.length; i++) {
       document.getElementById("ecommerceBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("photographerBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("tictactoeBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+      document.getElementById("shoppingListBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
 
 
 
@@ -471,6 +501,19 @@ for (let i = 0; i < cartImages.length; i++) {
                         document.getElementById("CVCard").classList.remove("rotate");
                   }, "550")
             }
+            else if (clickedBtnId == "shoppingListBtn") {
+                  shoppingListSiteCardCounter = shoppingListSiteCardCounter + 1 - n;
+                  if (shoppingListSiteCardCounter == shoppingListSiteCardCounterLimit) {
+                        shoppingListSiteCardCounter = 0
+                  }
+                  document.getElementById("shoppingListDescription").innerHTML = allCardsInfo.shoppingListSite.description[shoppingListSiteCardCounter]
+                  document.getElementById("shoppingListImg").src = allCardsInfo.shoppingListSite.src[shoppingListSiteCardCounter]
+                  document.getElementById("shoppingListImg").alt = allCardsInfo.shoppingListSite.alt[shoppingListSiteCardCounter]
+                  document.getElementById("shoppingListCard").classList.add("rotate");
+                  setTimeout(() => {
+                        document.getElementById("shoppingListCard").classList.remove("rotate");
+                  }, "550")
+            }
             else if (clickedBtnId == "socialBtn") {
                   socialSiteCardCounter = socialSiteCardCounter + 1 - n;
                   if (socialSiteCardCounter == socialSiteCardCounterLimit) {
@@ -543,6 +586,9 @@ for (let i = 0; i < cartImages.length; i++) {
 
       let tictactoeSiteCardCounter = 0
       let tictactoeSiteCardCounterLimit = allCardsInfo.tictactoeSite.description.length
+
+      let shoppingListSiteCardCounter = 0
+      let shoppingListSiteCardCounterLimit = allCardsInfo.shoppingListSite.description.length
 
 
 
@@ -633,6 +679,8 @@ for (let i = 0; i < cartImages.length; i++) {
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("socialCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("ecommerceCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("tictactoeCard")) })
+      document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("shoppingListCard")) })
+
 
       let photographerEventExecutedYet = false
       let trekkingEventExecutedYet = false
@@ -642,6 +690,8 @@ for (let i = 0; i < cartImages.length; i++) {
       let socialEventExecutedYet = false
       let ecommerceEventExecutedYet = false
       let tictactoeEventExecutedYet = false
+      let shoppingListEventExecutedYet = false
+
 
       function isCardAlmostVisible(card) {
 
@@ -670,6 +720,13 @@ for (let i = 0; i < cartImages.length; i++) {
                   }
                   else if (card.id == "tictactoeCard" && tictactoeEventExecutedYet) {
                         return
+                  }
+                  else if (card.id == "shoppingListCard" && shoppingListEventExecutedYet) {
+                        return
+                  }
+                  else if (card.id == "shoppingListCard") {
+                        shoppingListEventExecutedYet = true
+                        //   console.log("shoppingList video active")
                   }
                   else if (card.id == "photographerCard") {
                         photographerEventExecutedYet = true
