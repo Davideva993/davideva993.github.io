@@ -201,20 +201,46 @@
             <span id="shoppingListCard" class="projectContainers fullstack">
                   <h2>Interactive shopping list </h2>
                   <span class="internalProjectContainers">
-                        <img id="shoppingListImg" src="./media/shoppingList/shoppingList.png" alt="'video site" class="cartImg">
+                        <img id="shoppingListImg" src="./media/shoppingList/shoppingList.png" alt="'video site"
+                              class="cartImg">
                         <h3 id="shoppingListDescription">
-                              J'ai développé une liste de courses interactive et partagée permettant aux utilisateurs de collaborer en créant des listes de groupe où chaque membre peut ajouter des articles en choisissant une couleur spécifique ou en laissant le site choisir automatiquement 
-                              et également éliminer des articles au fur et à mesure. Parmi les fonctionnalités clés, les utilisateurs peuvent suivre en temps réel le total des articles achetés, enregistrer des bonnes occasions localement et accéder à un calculateur intégré.
-                              Le <strong>Backend</strong> a été fait grâce à <strong>Node.js</strong>, <strong>npm</strong>, <strong>express</strong>,
-                              <strong>helmet</strong>, <strong>mongoose</strong>, <strong>dotenv</strong>, <strong>path</strong>. La base de données utilisée est <strong>MongoDB</strong>.
+                              J'ai réalisé une liste de courses interactive et partagée. <br>
+                              Les utilisateurs peuvent créer une liste de courses de groupe et tous les membres de ce
+                              groupe peuvent ajouter des articles (en choisissant la couleur ou en laissant faire au
+                              site) et les éliminer.
+                              Ils peuvent également utiliser une fonctionnalité pour avoir le total des articles achetés
+                              en temps réel. Ils peuvent enregistrer les bonnes occasions localement et ils ont à leur
+                              disposition un calculateur.
+                              Le <strong>Backend</strong> a été fait grâce à <strong>Node.js</strong>,
+                              <strong>npm</strong>, <strong>express</strong>,
+                              <strong>helmet</strong>, <strong>mongoose</strong>, <strong>dotenv</strong>. La base de
+                              données utilisée est <strong>MongoDB</strong>.
                               <br>
                               <strong>Côté Frontend</strong>, j'ai utilisé <strong>JavaScript</strong>,
                               <strong>HTML</strong> et <strong>CSS</strong>.
-                          </h3>
+                        </h3>
                   </span>
                   <button class="changeCardBtn" id="shoppingListBtn">En savoir plus...</button>
             </span>
-
+            <span id="navalBattleCard" class="projectContainers fullstack">
+                  <h2>Multiplayer naval battle with marketplace</h2>
+                  <span class="internalProjectContainers">
+                        <img id="navalBattleImg" src="./media/navalbattle/navalBattle.png" alt="'video site"
+                              class="cartImg">
+                        <h3 id="navalBattleDescription"> J'ai créé un jeu de bataille navale multijoueur en ligne
+                              intégrant un marché où les joueurs peuvent acquérir des armes stratégiques, comme des
+                              défenses aériennes, des brouilleurs, des missiles alliés, des missiles nucléaires et des
+                              bateaux supplémentaires. Pour remporter la victoire, il faut gagner deux manches, ou trois
+                              en cas d'égalité. Ce projet a nécessité la mise en place de mécanismes de jeu au tour par
+                              tour ainsi que la gestion d'interactions en temps réel. Le frontend est basé sur
+                              <strong>HTML</strong>, <strong>CSS</strong> et <strong>JavaScript</strong>, tandis que le
+                              backend repose sur <strong>Node.js</strong>, <strong>MongoDB</strong>,
+                              <strong>npm</strong>, <strong>express</strong>, <strong>helmet</strong>,
+                              <strong>mongoose</strong>, <strong>jsonwebtoken</strong> et <strong>dotenv</strong>.
+                        </h3>
+                  </span>
+                  <button class="changeCardBtn" id="navalBattleBtn">Learn more...</button>
+            </span>
 
 
       </div>
@@ -228,7 +254,7 @@
 </html>
 
 <script>
-      mail.addEventListener("click", ()=>{mail.innerHTML="davide.valietti@gmx.fr"})
+      mail.addEventListener("click", () => { mail.innerHTML = "davide.valietti@gmx.fr" })
 
       let originalTravelDescription = document.getElementById("travelDescription").innerHTML
       let originalRestoDescription = document.getElementById("restoDescription").innerHTML
@@ -243,50 +269,51 @@
       let originalPhotographerDescription = document.getElementById("photographerDescription").innerHTML
       let originalTictactoeDescription = document.getElementById("tictactoeDescription").innerHTML
       let originalShoppingListDescription = document.getElementById("shoppingListDescription").innerHTML
+      let originalNavalBattleDescription = document.getElementById("navalBattleDescription").innerHTML
 
 
 
       // zoom on cart img----------------------------------------------------------------------------
       const cartImages = document.getElementsByClassName("cartImg");
-if (window.innerWidth > 1300) {
-    for (let i = 0; i < cartImages.length; i++) {
-        const cartImg = cartImages[i];
-        const originalWidth = cartImg.style.width
-        const originalPosition = getComputedStyle(cartImg).position; 
-        const originalZIndex = getComputedStyle(cartImg).zIndex; 
+      if (window.innerWidth > 1300) {
+            for (let i = 0; i < cartImages.length; i++) {
+                  const cartImg = cartImages[i];
+                  const originalWidth = cartImg.style.width
+                  const originalPosition = getComputedStyle(cartImg).position;
+                  const originalZIndex = getComputedStyle(cartImg).zIndex;
 
-        cartImg.addEventListener("mousedown", (e) => {
-            const target = e.target;
-            target.style.position = "fixed";
-            target.style.top = "10px";
-            target.style.left = "5%";
-            target.style.width = "90%";
-            target.style.maxHeight = "90%";
-            target.style.zIndex = "1";
+                  cartImg.addEventListener("mousedown", (e) => {
+                        const target = e.target;
+                        target.style.position = "fixed";
+                        target.style.top = "10px";
+                        target.style.left = "5%";
+                        target.style.width = "90%";
+                        target.style.maxHeight = "90%";
+                        target.style.zIndex = "1";
 
-            const handleMouseUp = function() {
-                target.style.width = originalWidth
-                target.style.position = originalPosition
-                target.style.zIndex = originalZIndex;
-                target.removeEventListener("mouseup", handleMouseUp);
-                target.removeEventListener("mousemove", handleMouseMove);
-            };
-            const handleMouseMove = function() {
-            };
-            target.addEventListener("mouseup", handleMouseUp);
-            target.addEventListener("mousemove", handleMouseMove);
-        });
-    }
-}
+                        const handleMouseUp = function () {
+                              target.style.width = originalWidth
+                              target.style.position = originalPosition
+                              target.style.zIndex = originalZIndex;
+                              target.removeEventListener("mouseup", handleMouseUp);
+                              target.removeEventListener("mousemove", handleMouseMove);
+                        };
+                        const handleMouseMove = function () {
+                        };
+                        target.addEventListener("mouseup", handleMouseUp);
+                        target.addEventListener("mousemove", handleMouseMove);
+                  });
+            }
+      }
 
 
 
       // change cart database------------------------------------------------------------------------
       let allCardsInfo = {
             shoppingListSite: {
-                  'description': [originalShoppingListDescription, "La liste", "L'utilisateur peut sélectionner une couleur ou activer le 'mode automatique', qui choisit automatiquement une couleur appropriée en fonction de la catégorie de l'article si possible", "L'utilisateur peut enregistrer un article considéré comme une bonne affaire en ajoutant également une brève description", "L'utilisateur peut laisser un message sur le post-it présent dans chaque liste de courses de groupe, le lire ou le modifier", "Un calculateur est disponible pour l'utilisateur" ],
+                  'description': [originalShoppingListDescription, "La liste", "L'utilisateur peut sélectionner une couleur ou activer le 'mode automatique', qui choisit automatiquement une couleur appropriée en fonction de la catégorie de l'article si possible", "L'utilisateur peut enregistrer un article considéré comme une bonne affaire en ajoutant également une brève description", "L'utilisateur peut laisser un message sur le post-it présent dans chaque liste de courses de groupe, le lire ou le modifier", "Un calculateur est disponible pour l'utilisateur"],
                   'src': ['./media/shoppingList/shoppingList.gif', './media/shoppingList/shoppingList.png', './media/shoppingList/shoppingListColors.png', './media/shoppingList/shoppingListSave.png', './media/shoppingList/shoppingListMessage.png', './media/shoppingList/shoppingListCalc.png'],
-                  'alt': ['video shopping list website', 'la liste', "choisir une couleur", 'enregistrer une occasion', 'envoyer, lire ou effacer un message','le calcolateur' ]
+                  'alt': ['video shopping list website', 'la liste', "choisir une couleur", 'enregistrer une occasion', 'envoyer, lire ou effacer un message', 'le calcolateur']
             },
             travelSite: {
                   'description': [originalTravelDescription, "Version ordinateur", 'Version mobile'],
@@ -348,6 +375,11 @@ if (window.innerWidth > 1300) {
                   'description': [originalTictactoeDescription, 'On peut voir que le joueur de gauche a envoyé le message "This is my msg" au joueur de droite'],
                   'src': ['./media/tictactoe/tictactoeSite.gif', './media/tictactoe/chat.png'],
                   'alt': ['video site', 'chat system'],
+            },
+            navalBattleSite: {
+                  'description': [originalNavalBattleDescription,"L'utilisateur peut rejoindre ou héberger une partie.", "Le marché permet aux joueurs d'acheter des bateaux supplémentaires et des armes spéciales : le Missile Allié (attaque aléatoire, pas de fin de tour), le Missile Nucléaire (dégâts majorés, section de carte inutilisable), le Brouilleur (déviation du missile au 60 %) et la Défense Aérienne (interception de missiles avec deux projectiles).", "La défense aérienne a intercepté un missile.","Une partie en cours."],
+                  'src': ['./media/navalbattle/navalbattleSite.gif', './media/navalbattle/hostorjoin.png', './media/navalbattle/market.png', './media/navalbattle/intercepted.png', './media/navalbattle/inprogressmatch.png'],
+                  'alt': ['video multiplayer navalbattle website', "L'utilisateur peut rejoindre ou lancer une partie.", "Vue du marché", "La défense aérienne a intercepté un missile.", "Une partie en cours."],
             }
       }
 
@@ -365,6 +397,7 @@ if (window.innerWidth > 1300) {
       document.getElementById("photographerBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("tictactoeBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("shoppingListBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+      document.getElementById("navalBattleBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
 
 
 
@@ -539,6 +572,19 @@ if (window.innerWidth > 1300) {
                         document.getElementById("tictactoeCard").classList.remove("rotate");
                   }, "550")
             }
+            else if (clickedBtnId == "navalBattleBtn") {
+                  navalBattleSiteCardCounter = navalBattleSiteCardCounter + 1 - n;
+                  if (navalBattleSiteCardCounter == navalBattleSiteCardCounterLimit) {
+                        navalBattleSiteCardCounter = 0
+                  }
+                  document.getElementById("navalBattleDescription").innerHTML = allCardsInfo.navalBattleSite.description[navalBattleSiteCardCounter]
+                  document.getElementById("navalBattleImg").src = allCardsInfo.navalBattleSite.src[navalBattleSiteCardCounter]
+                  document.getElementById("navalBattleImg").alt = allCardsInfo.navalBattleSite.alt[navalBattleSiteCardCounter]
+                  document.getElementById("navalBattleCard").classList.add("rotate");
+                  setTimeout(() => {
+                        document.getElementById("navalBattleCard").classList.remove("rotate");
+                  }, "550")
+            }
       }
 
 
@@ -588,6 +634,9 @@ if (window.innerWidth > 1300) {
 
       let shoppingListSiteCardCounter = 0
       let shoppingListSiteCardCounterLimit = allCardsInfo.shoppingListSite.description.length
+
+      let navalBattleSiteCardCounter = 0
+      let navalBattleSiteCardCounterLimit = allCardsInfo.navalBattleSite.description.length
 
 
 
@@ -651,7 +700,7 @@ if (window.innerWidth > 1300) {
       document.getElementById("quitIcon").addEventListener("click", quitSearchFunction)
 
 
-      
+
 
 
 
@@ -679,6 +728,7 @@ if (window.innerWidth > 1300) {
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("ecommerceCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("tictactoeCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("shoppingListCard")) })
+      document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("navalBattleCard")) })
 
 
       let photographerEventExecutedYet = false
@@ -690,12 +740,12 @@ if (window.innerWidth > 1300) {
       let ecommerceEventExecutedYet = false
       let tictactoeEventExecutedYet = false
       let shoppingListEventExecutedYet = false
-
+      let navalBattleEventExecutedYet = false
 
       function isCardAlmostVisible(card) {
 
             const rect = card.getBoundingClientRect()
-            if (rect.top - window.innerHeight < 200) {
+            if (rect.top - window.innerHeight < 500) {
                   if (card.id == "photographerCard" && photographerEventExecutedYet) {
                         return
                   }
@@ -721,6 +771,9 @@ if (window.innerWidth > 1300) {
                         return
                   }
                   else if (card.id == "shoppingListCard" && shoppingListEventExecutedYet) {
+                        return
+                  }
+                  else if (card.id == "navalBattleCard" && navalBattleEventExecutedYet) {
                         return
                   }
                   else if (card.id == "shoppingListCard") {
@@ -758,6 +811,10 @@ if (window.innerWidth > 1300) {
                   else if (card.id == "tictactoeCard") {
                         tictactoeEventExecutedYet = true
                         // console.log("tic video active")
+                  }
+                  else if (card.id == "navalBattleCard") {
+                        navalBattleEventExecutedYet = true
+                        // console.log("naval video active")
                   }
 
                   changeCard(card.id.split("Card")[0].concat("Btn"), 1)
