@@ -90,7 +90,7 @@
                   </span>
                   <button class="changeCardBtn" id="photographerBtn">En savoir plus...</button>
             </span>
-            <span id="travelCard" class=" projectContainers frontend">
+            <!-- <span id="travelCard" class=" projectContainers frontend">
                   <h2 class="">Maquettes d'un site de voyages</h2>
                   <span class="internalProjectContainers ">
                         <img id="travelImg" src="./media/travel/screen.png" alt="'video site" class="cartImg">
@@ -103,7 +103,7 @@
                         </h3>
                   </span>
                   <button class="changeCardBtn" id="travelBtn">En savoir plus...</button>
-            </span>
+            </span>-->
             <span id="trekkingCard" class="projectContainers frontend">
                   <h2>Site vitrine d'un club de trekking</h2>
                   <span class="internalProjectContainers">
@@ -199,7 +199,7 @@
                   <button class="changeCardBtn" id="ecommerceBtn">En savoir plus...</button>
             </span>
             <span id="shoppingListCard" class="projectContainers fullstack">
-                  <h2>Liste de courses interactive + <strong>IA</strong>  </h2>
+                  <h2>Liste de courses interactive + <strong>IA</strong> </h2>
                   <span class="internalProjectContainers">
                         <img id="shoppingListImg" src="./media/shoppingList/shoppingList.png" alt="'video site"
                               class="cartImg">
@@ -210,7 +210,8 @@
                               site) et les éliminer.
                               Ils peuvent également utiliser une fonctionnalité pour avoir le total des articles achetés
                               en temps réel. Ils peuvent enregistrer les bonnes occasions localement et ils ont à leur
-                              disposition un calculateur et la possibilité de demander une recette à <strong>ChatGPT</strong>, selon les articles de la liste
+                              disposition un calculateur et la possibilité de demander une recette à
+                              <strong>ChatGPT</strong>, selon les articles de la liste
                               Le <strong>Backend</strong> a été fait grâce à <strong>Node.js</strong>,
                               <strong>npm</strong>, <strong>express</strong>,
                               <strong>helmet</strong>, <strong>mongoose</strong>, <strong>dotenv</strong>. La base de
@@ -241,6 +242,32 @@
                   </span>
                   <button class="changeCardBtn" id="navalBattleBtn">Learn more...</button>
             </span>
+            <span id="chatSDXCard" class="projectContainers fullstack">
+                  <h2>Chat chiffré de bout en bout expérimental et minimaliste</h2>
+                  <span class="internalProjectContainers">
+                        <img id="chatSDXImg" src="./media/chatSDX/schema.png" alt="'video site" class="cartImg">
+                        <h3 id="chatSDXDescription"> J'ai développé un chat minimaliste et expérimental avec
+                              <strong>chiffrement de bout en bout</strong> conçu pour maximiser la résistance à un
+                              serveur qui aurait été
+                              compromis avant que les clés ne soient échangées. L’initialisation nécessite un canal
+                              externe
+                              temporairement sécurisé. Des timers et
+                              vérifications croisées bloquent toute compromission et le serveur ne voit aucune
+                              information
+                              sensible en clair. Chaque message utilise une clé unique dérivée via
+                              <strong>Argon2id</strong> et qui
+                              dépend de tous les messages passés et d'un mot secret. Données
+                              éphémères,
+                              variables locales, auto-destruction de la salle. Frontend en <strong>HTML</strong>,
+                              <strong>CSS</strong> et <strong>JavaScript</strong> ;
+                              backend en <strong>npm</strong>, <strong>helmet</strong>, <strong>Node.js</strong>,
+                              <strong>express</strong>, <strong>SQLite</strong> et
+                              <strong>Sequelize</strong>.
+                              <a href="https://github.com/Davideva993/Chat-SDX"><strong>Le code complet ici</strong></a>
+                        </h3>
+                  </span>
+                  <button class="changeCardBtn" id="chatSDXBtn">Learn more...</button>
+            </span>
 
 
       </div>
@@ -256,7 +283,7 @@
 <script>
       mail.addEventListener("click", () => { mail.innerHTML = "davide.valietti@gmx.fr" })
 
-      let originalTravelDescription = document.getElementById("travelDescription").innerHTML
+      //let originalTravelDescription = document.getElementById("travelDescription").innerHTML
       let originalRestoDescription = document.getElementById("restoDescription").innerHTML
       let originalTrekkingDescription = document.getElementById("trekkingDescription").innerHTML
       let originalGuitaristDescription = document.getElementById("guitaristDescription").innerHTML
@@ -270,6 +297,8 @@
       let originalTictactoeDescription = document.getElementById("tictactoeDescription").innerHTML
       let originalShoppingListDescription = document.getElementById("shoppingListDescription").innerHTML
       let originalNavalBattleDescription = document.getElementById("navalBattleDescription").innerHTML
+      let originalChatSDXDescription = document.getElementById("chatSDXDescription").innerHTML
+
 
 
 
@@ -315,11 +344,11 @@
                   'src': ['./media/shoppingList/shoppingList.gif', './media/shoppingList/shoppingList.png', './media/shoppingList/shoppingListColors.png', './media/shoppingList/shoppingListSave.png', './media/shoppingList/shoppingListMessage.png', './media/shoppingList/shoppingListCalc.png', './media/shoppingList/aiRecipe.png'],
                   'alt': ['video shopping list website', 'la liste', "choisir une couleur", 'enregistrer une occasion', 'envoyer, lire ou effacer un message', 'le calcolateur', "L'utilisateur peut demander à l'IA de proposer une recette en fonction des éléments de sa liste."]
             },
-            travelSite: {
+            /*travelSite: {
                   'description': [originalTravelDescription, "Version ordinateur", 'Version mobile'],
                   'src': ['./media/travel/travelsite.gif', './media/travel/desktop.png', './media/travel/mobile.png'],
                   'alt': ['video site', 'site version ordinateur', 'site version mobile']
-            },
+            },*/
             restoSite: {
                   'description': [originalRestoDescription, "Homepage version ordinateur", 'Page "restaurant" version ordinateur', "Version mobile"],
                   'src': ['./media/resto/restosite.gif', './media/resto/computer.png', './media/resto/desktopf.png', './media/resto/mobile.png'],
@@ -377,14 +406,19 @@
                   'alt': ['video site', 'chat system'],
             },
             navalBattleSite: {
-                  'description': [originalNavalBattleDescription,"L'utilisateur peut rejoindre ou héberger une partie.", "Le marché permet aux joueurs d'acheter des bateaux supplémentaires et des armes spéciales : le Missile Allié (attaque aléatoire, pas de fin de tour), le Missile Nucléaire (dégâts majorés, section de carte inutilisable), le Brouilleur (déviation du missile au 60 %) et la Défense Aérienne (interception de missiles avec deux projectiles).", "La défense aérienne a intercepté un missile.","Une partie en cours."],
+                  'description': [originalNavalBattleDescription, "L'utilisateur peut rejoindre ou héberger une partie.", "Le marché permet aux joueurs d'acheter des bateaux supplémentaires et des armes spéciales : le Missile Allié (attaque aléatoire, pas de fin de tour), le Missile Nucléaire (dégâts majorés, section de carte inutilisable), le Brouilleur (déviation du missile au 60 %) et la Défense Aérienne (interception de missiles avec deux projectiles).", "La défense aérienne a intercepté un missile.", "Une partie en cours."],
                   'src': ['./media/navalbattle/navalbattleSite.gif', './media/navalbattle/hostorjoin.png', './media/navalbattle/market.png', './media/navalbattle/intercepted.png', './media/navalbattle/inprogressmatch.png'],
                   'alt': ['video multiplayer navalbattle website', "L'utilisateur peut rejoindre ou lancer une partie.", "Vue du marché", "La défense aérienne a intercepté un missile.", "Une partie en cours."],
+            },
+            chatSDXSite: {
+                  'description': [originalChatSDXDescription, "Phase de l'échange des clés : les timers de sécurité (indépendants du backend) et les vérifications protègent contre les compromissions : s'il y a un doute, la room est détruite.", "Chat en cours. La clé AES qui crypte les messages est générée à partir d'une nouvelle clé (envoyée chiffrée dans le précédent message) qui est dérivée via Argon2 avec un sel formé par un hash de tous les nonces chiffrés contenus dans tous les précédents messages et le mot secret.", "Le schéma récapitulatif du système. <a href='https://raw.githubusercontent.com/Davideva993/Chat-SDX/refs/heads/main/readme.md'><strong>Plus d'informations ici</strong></a>"],
+                  'src': ['./media/chatSDX/chatSDX.gif', './media/chatSDX/keys.png', './media/chatSDX/chat.png', './media/chatSDX/schema.png',],
+                  'alt': ['vidéo chatSDX website', "Phase de l'échange des clés.", "Phase chat.", "Schéma récapitulatif."],
             }
       }
 
       //change card button
-      document.getElementById("travelBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+      //document.getElementById("travelBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("restoBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("trekkingBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("guitaristBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
@@ -398,12 +432,14 @@
       document.getElementById("tictactoeBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("shoppingListBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("navalBattleBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+      document.getElementById("chatSDXBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+
 
 
 
 
       function changeCard(clickedBtnId, n) {
-            if (clickedBtnId == "travelBtn") {
+           /* if (clickedBtnId == "travelBtn") {
                   travelSiteCardCounter = travelSiteCardCounter + 1 - n;
                   if (travelSiteCardCounter == travelSiteCardCounterLimit) {
                         travelSiteCardCounter = 0
@@ -416,7 +452,7 @@
                         document.getElementById("travelCard").classList.remove("rotate");
                   }, "550")
             }
-            else if (clickedBtnId == "restoBtn") {
+            else */if (clickedBtnId == "restoBtn") {
                   restoSiteCardCounter = restoSiteCardCounter + 1 - n;
                   if (restoSiteCardCounter == restoSiteCardCounterLimit) {
                         restoSiteCardCounter = 0
@@ -585,6 +621,19 @@
                         document.getElementById("navalBattleCard").classList.remove("rotate");
                   }, "550")
             }
+            else if (clickedBtnId == "chatSDXBtn") {
+                  chatSDXSiteCardCounter = chatSDXSiteCardCounter + 1 - n;
+                  if (chatSDXSiteCardCounter == chatSDXSiteCardCounterLimit) {
+                        chatSDXSiteCardCounter = 0
+                  }
+                  document.getElementById("chatSDXDescription").innerHTML = allCardsInfo.chatSDXSite.description[chatSDXSiteCardCounter]
+                  document.getElementById("chatSDXImg").src = allCardsInfo.chatSDXSite.src[chatSDXSiteCardCounter]
+                  document.getElementById("chatSDXImg").alt = allCardsInfo.chatSDXSite.alt[chatSDXSiteCardCounter]
+                  document.getElementById("chatSDXCard").classList.add("rotate");
+                  setTimeout(() => {
+                        document.getElementById("navalBattleCard").classList.remove("rotate");
+                  }, "550")
+            }
       }
 
 
@@ -596,8 +645,8 @@
       //change card: when all card's images.png has been shown , counter =0 to re-start the loop
 
 
-      let travelSiteCardCounter = 0
-      let travelSiteCardCounterLimit = allCardsInfo.travelSite.description.length
+      /* let travelSiteCardCounter = 0
+       let travelSiteCardCounterLimit = allCardsInfo.travelSite.description.length*/
 
       let restoSiteCardCounter = 0
       let restoSiteCardCounterLimit = allCardsInfo.restoSite.description.length
@@ -638,6 +687,8 @@
       let navalBattleSiteCardCounter = 0
       let navalBattleSiteCardCounterLimit = allCardsInfo.navalBattleSite.description.length
 
+      let chatSDXSiteCardCounter = 0
+      let chatSDXSiteCardCounterLimit = allCardsInfo.chatSDXSite.description.length
 
 
 
@@ -721,7 +772,7 @@
 
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("photographerCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("trekkingCard")) })
-      document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("travelCard")) })
+      // document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("travelCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("piqCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("kanapCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("socialCard")) })
@@ -729,11 +780,13 @@
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("tictactoeCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("shoppingListCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("navalBattleCard")) })
+      document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("chatSDXCard")) })
+
 
 
       let photographerEventExecutedYet = false
       let trekkingEventExecutedYet = false
-      let travelEventExecutedYet = false
+      //let travelEventExecutedYet = false
       let piqEventExecutedYet = false
       let kanapEventExecutedYet = false
       let socialEventExecutedYet = false
@@ -741,6 +794,8 @@
       let tictactoeEventExecutedYet = false
       let shoppingListEventExecutedYet = false
       let navalBattleEventExecutedYet = false
+      let chatSDXEventExecutedYet = false
+
 
       function isCardAlmostVisible(card) {
 
@@ -752,9 +807,9 @@
                   else if (card.id == "trekkingCard" && trekkingEventExecutedYet) {
                         return
                   }
-                  else if (card.id == "travelCard" && travelEventExecutedYet) {
-                        return
-                  }
+                  /* else if (card.id == "travelCard" && travelEventExecutedYet) {
+                         return
+                   }*/
                   else if (card.id == "piqCard" && piqEventExecutedYet) {
                         return
                   }
@@ -776,6 +831,9 @@
                   else if (card.id == "navalBattleCard" && navalBattleEventExecutedYet) {
                         return
                   }
+                  else if (card.id == "chatSDXCard" && chatSDXEventExecutedYet) {
+                        return
+                  }
                   else if (card.id == "shoppingListCard") {
                         shoppingListEventExecutedYet = true
                         //   console.log("shoppingList video active")
@@ -788,10 +846,10 @@
                         trekkingEventExecutedYet = true
                         //   console.log("trek video active")
                   }
-                  else if (card.id == "travelCard") {
+                  /*else if (card.id == "travelCard") {
                         travelEventExecutedYet = true
                         //   console.log("travel video active")
-                  }
+                  }*/
                   else if (card.id == "piqCard") {
                         piqEventExecutedYet = true
                         //  console.log("piq video active")
@@ -814,6 +872,10 @@
                   }
                   else if (card.id == "navalBattleCard") {
                         navalBattleEventExecutedYet = true
+                        // console.log("naval video active")
+                  }
+                  else if (card.id == "chatSDXCard") {
+                        chatSDXEventExecutedYet = true
                         // console.log("naval video active")
                   }
 
