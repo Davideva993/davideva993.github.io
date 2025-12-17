@@ -36,7 +36,7 @@
                   </span>
                   <button class="changeCardBtn" id="guitaristBtn">En savoir plus...</button>
             </span>
-            <span id="CVCard" class="projectContainers frontend">
+            <!--<span id="CVCard" class="projectContainers frontend">
                   <h2>CV interactif</h2>
                   <span class="internalProjectContainers">
                         <img id="CVImg" src="./media/CV/CVsite.gif" alt="'video site" class="cartImg">
@@ -48,7 +48,7 @@
                         </h3>
                   </span>
                   <button class="changeCardBtn" id="CVBtn">En savoir plus...</button>
-            </span>
+            </span>!-->
             <span id="restoCard" class="projectContainers frontend">
                   <h2>Maquettes d'un site de restauration </h2>
                   <span class="internalProjectContainers">
@@ -242,6 +242,27 @@
                   </span>
                   <button class="changeCardBtn" id="navalBattleBtn">Learn more...</button>
             </span>
+            <span id="memoryXddCard" class="projectContainers frontend">
+                  <h2>Mémoire personalisé hors ligne</h2>
+                  <span class="internalProjectContainers">
+                        <img id="memoryXddImg" style="max-height: 90%;" src="./media/memoryXdd/memoryXdd.gif"
+                              alt="'video site" class="cartImg">
+                        <h3 id="memoryXddDescription">
+                              Grâce à <strong>Tauri</strong>, j'ai réalisé un jeu de mémoire pour
+                              <strong>Android</strong>. L'utilisateur peut choisir entre 5 styles/couleurs et 3 paquets,
+                              dont un formé par ses propres images.
+                              S'il choisit ce dernier, il peut sélectionner des images dans sa galerie. Ces images sont
+                              alors compressées (via <strong>canvas</strong>), encodées en <strong>base64</strong> et
+                              sauvegardées localement en tant que paquet personnalisé.
+                              Il y a également quelques statistiques (moyenne, record) et un systeme de traduction hors
+                              ligne automatique.
+                              Le jeu est hors ligne et publié <a
+                                    href="https://apkpure.com/memoryxdd/com.memoryxdd.app">ici, sur APK Pure</a>.
+                              J'ai utilisé <strong>HTML</strong>, <strong>CSS</strong> et <strong>JavaScript</strong>.
+                        </h3>
+                  </span>
+                  <button class="changeCardBtn" id="memoryXddBtn">En savoir plus...</button>
+            </span>
             <span id="chatSDXCard" class="projectContainers fullstack">
                   <h2>Chat chiffré de bout en bout expérimental et minimaliste</h2>
                   <span class="internalProjectContainers">
@@ -291,7 +312,8 @@
       let originalSocialDescription = document.getElementById("socialDescription").innerHTML
       let originalPiqDescription = document.getElementById("piqDescription").innerHTML
       let originalKanapDescription = document.getElementById("kanapDescription").innerHTML
-      let originalCVDescription = document.getElementById("CVDescription").innerHTML
+      //let originalCVDescription = document.getElementById("CVDescription").innerHTML
+      let originalMemoryXddDescription = document.getElementById("memoryXddDescription").innerHTML
       let originalEcommerceDescription = document.getElementById("ecommerceDescription").innerHTML
       let originalPhotographerDescription = document.getElementById("photographerDescription").innerHTML
       let originalTictactoeDescription = document.getElementById("tictactoeDescription").innerHTML
@@ -319,6 +341,9 @@
                         target.style.width = "90%";
                         target.style.maxHeight = "90%";
                         target.style.zIndex = "1";
+                        if (target.id == "memoryXddImg") {
+                              target.style.width = "50%";
+                        }
 
                         const handleMouseUp = function () {
                               target.style.width = originalWidth
@@ -365,11 +390,20 @@
                   'alt': ['video site', "homepage version ordinateur", 'page dates version ordinateur', 'site version mobile']
 
             },
-            CVSite: {
-                  'description': [originalCVDescription, "Version ordinateur"],
-                  'src': ['./media/CV/CVsite.gif', './media/CV/cv.png'],
-                  'alt': ['video site', 'site version ordinateur']
+            /* CVSite: {
+                   'description': [originalCVDescription, "Version ordinateur"],
+                   'src': ['./media/CV/CVsite.gif', './media/CV/cv.png'],
+                   'alt': ['video site', 'site version ordinateur']
+             },*/
+            memoryXddSite: {
+                  'description': [originalMemoryXddDescription, "Le jeu", 'La sélection du style'],
+                  'src': ['./media/memoryXdd/memoryXdd.gif', './media/memoryXdd/jeu.png', './media/memoryXdd/style.png'],
+                  'alt': ['video app', 'Le jeu', 'La sélection du style']
             },
+
+
+
+
             trekkingSite: {
                   'description': [originalTrekkingDescription, "Homepage version ordinateur", 'Page "le groupe" version ordinateur', 'Page "nous contacter" version ordinateur', 'Page "devenir membre" version ordinateur', 'Page "photos" version ordinateur', "Version mobile"],
                   'src': ['./media/trekking/trekkingsite.gif', './media/trekking/home.png', './media/trekking/about.png', './media/trekking/contact.png', './media/trekking/member.png', './media/trekking/pictures.png', './media/trekking/Mobile.png'],
@@ -426,13 +460,14 @@
       document.getElementById("socialBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("piqBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0), 0 })
       document.getElementById("kanapBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
-      document.getElementById("CVBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+      //  document.getElementById("CVBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("ecommerceBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("photographerBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("tictactoeBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("shoppingListBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("navalBattleBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("chatSDXBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+      document.getElementById("memoryXddBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
 
 
 
@@ -556,7 +591,7 @@
                         document.getElementById("photographerCard").classList.remove("rotate");
                   }, "550")
             }
-            else if (clickedBtnId == "CVBtn") {
+            /*else if (clickedBtnId == "CVBtn") {
                   CVSiteCardCounter = CVSiteCardCounter + 1 - n;
                   if (CVSiteCardCounter == CVSiteCardCounterLimit) {
                         CVSiteCardCounter = 0
@@ -567,6 +602,19 @@
                   document.getElementById("CVCard").classList.add("rotate");
                   setTimeout(() => {
                         document.getElementById("CVCard").classList.remove("rotate");
+                  }, "550")
+            }*/
+            else if (clickedBtnId == "memoryXddBtn") {
+                  memoryXddSiteCardCounter = memoryXddSiteCardCounter + 1 - n;
+                  if (memoryXddSiteCardCounter == memoryXddSiteCardCounterLimit) {
+                        memoryXddSiteCardCounter = 0
+                  }
+                  document.getElementById("memoryXddDescription").innerHTML = allCardsInfo.memoryXddSite.description[memoryXddSiteCardCounter]
+                  document.getElementById("memoryXddImg").src = allCardsInfo.memoryXddSite.src[memoryXddSiteCardCounter]
+                  document.getElementById("memoryXddImg").alt = allCardsInfo.memoryXddSite.alt[memoryXddSiteCardCounter]
+                  document.getElementById("memoryXddCard").classList.add("rotate");
+                  setTimeout(() => {
+                        document.getElementById("memoryXddCard").classList.remove("rotate");
                   }, "550")
             }
             else if (clickedBtnId == "shoppingListBtn") {
@@ -669,8 +717,11 @@
       let kanapSiteCardCounter = 0
       let kanapSiteCardCounterLimit = allCardsInfo.kanapSite.description.length
 
-      let CVSiteCardCounter = 0
-      let CVSiteCardCounterLimit = allCardsInfo.CVSite.description.length
+      //let CVSiteCardCounter = 0
+      //let CVSiteCardCounterLimit = allCardsInfo.CVSite.description.length
+
+      let memoryXddSiteCardCounter = 0
+      let memoryXddSiteCardCounterLimit = allCardsInfo.memoryXddSite.description.length
 
       let ecommerceSiteCounter = 0
       let ecommerceSiteCounterLimit = allCardsInfo.ecommerceSite.description.length
