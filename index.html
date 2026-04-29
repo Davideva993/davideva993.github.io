@@ -24,7 +24,7 @@
 
 
 
-            <span id="guitaristCard" class="projectContainers frontend">
+            <!--<span id="guitaristCard" class="projectContainers frontend">
                   <h2>Site personnel d'un guitariste</h2>
                   <span class="internalProjectContainers">
                         <img id="guitaristImg" src="./media/guitarist/guitarsitesite.gif" alt="'video site"
@@ -36,7 +36,7 @@
                   </span>
                   <button class="changeCardBtn" id="guitaristBtn">En savoir plus...</button>
             </span>
-            <!--<span id="CVCard" class="projectContainers frontend">
+            <span id="CVCard" class="projectContainers frontend">
                   <h2>CV interactif</h2>
                   <span class="internalProjectContainers">
                         <img id="CVImg" src="./media/CV/CVsite.gif" alt="'video site" class="cartImg">
@@ -48,7 +48,7 @@
                         </h3>
                   </span>
                   <button class="changeCardBtn" id="CVBtn">En savoir plus...</button>
-            </span>!-->
+            </span>
             <span id="restoCard" class="projectContainers frontend">
                   <h2>Maquettes d'un site de restauration </h2>
                   <span class="internalProjectContainers">
@@ -62,7 +62,7 @@
                         </h3>
                   </span>
                   <button class="changeCardBtn" id="restoBtn">En savoir plus...</button>
-            </span>
+            </span>!-->
             <span id="panthereCard" class="projectContainers frontend">
                   <h2>Optimisation d'un site de photographie</h2>
                   <span class="internalProjectContainers">
@@ -116,7 +116,7 @@
                   <button class="changeCardBtn" id="trekkingBtn">En savoir plus...</button>
             </span>
 
-            <span id="kanapCard" class="projectContainers frontend">
+            <!--<span id="kanapCard" class="projectContainers frontend">
                   <h2>Frontend d'un site d'ecommerce</h2>
                   <span class="internalProjectContainers">
                         <img id="kanapImg" src="./media/div/screen.png" alt="'video site" class="cartImg">
@@ -143,7 +143,7 @@
                         </h3>
                   </span>
                   <button class="changeCardBtn" id="piqBtn">En savoir plus...</button>
-            </span>
+            </span>-->
             <span id="tictactoeCard" class="projectContainers fullstack">
                   <h2>Tic Tac Toe multijoueur</h2>
                   <span class="internalProjectContainers">
@@ -305,13 +305,13 @@
       mail.addEventListener("click", () => { mail.innerHTML = "davide.valietti@gmx.fr" })
 
       //let originalTravelDescription = document.getElementById("travelDescription").innerHTML
-      let originalRestoDescription = document.getElementById("restoDescription").innerHTML
+     // let originalRestoDescription = document.getElementById("restoDescription").innerHTML
       let originalTrekkingDescription = document.getElementById("trekkingDescription").innerHTML
-      let originalGuitaristDescription = document.getElementById("guitaristDescription").innerHTML
+     // let originalGuitaristDescription = document.getElementById("guitaristDescription").innerHTML
       let originalPanthereDescription = document.getElementById("panthereDescription").innerHTML
       let originalSocialDescription = document.getElementById("socialDescription").innerHTML
-      let originalPiqDescription = document.getElementById("piqDescription").innerHTML
-      let originalKanapDescription = document.getElementById("kanapDescription").innerHTML
+     // let originalPiqDescription = document.getElementById("piqDescription").innerHTML
+     // let originalKanapDescription = document.getElementById("kanapDescription").innerHTML
       //let originalCVDescription = document.getElementById("CVDescription").innerHTML
       let originalMemoryXddDescription = document.getElementById("memoryXddDescription").innerHTML
       let originalEcommerceDescription = document.getElementById("ecommerceDescription").innerHTML
@@ -373,24 +373,24 @@
                   'description': [originalTravelDescription, "Version ordinateur", 'Version mobile'],
                   'src': ['./media/travel/travelsite.gif', './media/travel/desktop.png', './media/travel/mobile.png'],
                   'alt': ['video site', 'site version ordinateur', 'site version mobile']
-            },*/
+            },
             restoSite: {
                   'description': [originalRestoDescription, "Homepage version ordinateur", 'Page "restaurant" version ordinateur', "Version mobile"],
                   'src': ['./media/resto/restosite.gif', './media/resto/computer.png', './media/resto/desktopf.png', './media/resto/mobile.png'],
                   'alt': ['video site', 'homepage version ordinateur', 'page restaurant version ordinateur', 'site version mobile']
-            },
+            },*/
             photographerSite: {
                   'description': [originalPhotographerDescription, "Homepage version ordinateur", 'Page "services" version ordinateur', 'Page "créations" version ordinateur', "Version mobile"],
                   'src': ['./media/photo/photosite.gif', './media/photo/home.png', './media/photo/services.png', './media/photo/creations.png', './media/photo/mobile.png'],
                   'alt': ['video site', "homepage version ordinateur", 'page services version ordinateur', 'page créations version ordinateur', 'site version mobile']
             },
-            guitaristSite: {
+           /* guitaristSite: {
                   'description': [originalGuitaristDescription, 'Homepage version ordinateur', 'Page "dates" version ordinateur', 'Version mobile'],
                   'src': ['./media/guitarist/guitarsitesite.gif', './media/guitarist/home.png', './media/guitarist/dates.png', './media/guitarist/mobile.png'],
                   'alt': ['video site', "homepage version ordinateur", 'page dates version ordinateur', 'site version mobile']
 
             },
-            /* CVSite: {
+             CVSite: {
                    'description': [originalCVDescription, "Version ordinateur"],
                    'src': ['./media/CV/CVsite.gif', './media/CV/cv.png'],
                    'alt': ['video site', 'site version ordinateur']
@@ -414,7 +414,7 @@
                   'src': ['./media/panthere/lapantheresite.gif', './media/panthere/home.png', './media/panthere/pag2.png'],
                   'alt': ['video site', "homepage, avant-après Lighthouse", 'page nous contacter, avant-après Lighthouse']
             },
-            piqSite: {
+           /* piqSite: {
                   'description': [originalPiqDescription, 'Page "login"', 'Homepage', 'Page "produit"; la sauce en détail', 'Page "add sauce"; pour créer une nouvelle sauce'],
                   'src': ['./media/piq/piqasite.gif', './media/piq/login.png', './media/piq/home.png', './media/piq/product.png', './media/piq/addsauce.png'],
                   'alt': ['video site', 'page login', 'homepage', 'page produit', 'page add sauce']
@@ -423,7 +423,7 @@
                   'description': [originalKanapDescription, "Homepage", 'Page qui montre le produit en détail', "Page panier", 'Page qui affiche le numéro de confirmation, envoyé par le backend'],
                   'src': ['./media/div/divsite.gif', './media/div/home.png', './media/div/product.png', './media/div/cart.png', './media/div/confirmation.png'],
                   'alt': ['video site', "homepage", 'page produit', "page panier", 'page confirmation']
-            },
+            },*/
             socialSite: {
                   'description': [originalSocialDescription, 'Page "login"', "Homepage; on voit les post des autres utilisateurs et on peut les aimer/liker. Si on crée un post, on a la possibilité de l'éliminer, le modifier ou l'aimer/liker "],
                   'src': ['./media/social/socialsite.gif', './media/social/logindesktop.png', './media/social/homedesktop.png'],
@@ -453,13 +453,13 @@
 
       //change card button
       //document.getElementById("travelBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
-      document.getElementById("restoBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+     // document.getElementById("restoBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("trekkingBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
-      document.getElementById("guitaristBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+    //  document.getElementById("guitaristBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("panthereBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("socialBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
-      document.getElementById("piqBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0), 0 })
-      document.getElementById("kanapBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
+     // document.getElementById("piqBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0), 0 })
+      //document.getElementById("kanapBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       //  document.getElementById("CVBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("ecommerceBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
       document.getElementById("photographerBtn").addEventListener("click", (e) => { changeCard(e.target.id, 0) })
@@ -487,7 +487,7 @@
                         document.getElementById("travelCard").classList.remove("rotate");
                   }, "550")
             }
-            else */if (clickedBtnId == "restoBtn") {
+            else if (clickedBtnId == "restoBtn") {
                   restoSiteCardCounter = restoSiteCardCounter + 1 - n;
                   if (restoSiteCardCounter == restoSiteCardCounterLimit) {
                         restoSiteCardCounter = 0
@@ -500,7 +500,7 @@
                         document.getElementById("restoCard").classList.remove("rotate");
                   }, "550")
             }
-            else if (clickedBtnId == "panthereBtn") {
+            else */if (clickedBtnId == "panthereBtn") {
                   panthereSiteCardCounter = panthereSiteCardCounter + 1 - n;
                   if (panthereSiteCardCounter == panthereSiteCardCounterLimit) {
                         panthereSiteCardCounter = 0
@@ -513,7 +513,7 @@
                         document.getElementById("panthereCard").classList.remove("rotate");
                   }, "550")
             }
-            else if (clickedBtnId == "kanapBtn") {
+          /*  else if (clickedBtnId == "kanapBtn") {
                   kanapSiteCardCounter = kanapSiteCardCounter + 1 - n;
                   if (kanapSiteCardCounter == kanapSiteCardCounterLimit) {
                         kanapSiteCardCounter = 0
@@ -538,7 +538,7 @@
                   setTimeout(() => {
                         document.getElementById("piqCard").classList.remove("rotate");
                   }, "550")
-            }
+            }*/
             else if (clickedBtnId == "ecommerceBtn") {
                   ecommerceSiteCounter = ecommerceSiteCounter + 1 - n;
                   if (ecommerceSiteCounter == ecommerceSiteCounterLimit) {
@@ -565,7 +565,7 @@
                         document.getElementById("trekkingCard").classList.remove("rotate");
                   }, "550")
             }
-            else if (clickedBtnId == "guitaristBtn") {
+           /* else if (clickedBtnId == "guitaristBtn") {
                   guitaristSiteCardCounter = guitaristSiteCardCounter + 1 - n;
                   if (guitaristSiteCardCounter == guitaristSiteCardCounterLimit) {
                         guitaristSiteCardCounter = 0
@@ -577,7 +577,7 @@
                   setTimeout(() => {
                         document.getElementById("guitaristCard").classList.remove("rotate");
                   }, "550")
-            }
+            }*/
             else if (clickedBtnId == "photographerBtn") {
                   photographerSiteCardCounter = photographerSiteCardCounter + 1 - n;
                   if (photographerSiteCardCounter == photographerSiteCardCounterLimit) {
@@ -694,16 +694,16 @@
 
 
       /* let travelSiteCardCounter = 0
-       let travelSiteCardCounterLimit = allCardsInfo.travelSite.description.length*/
+       let travelSiteCardCounterLimit = allCardsInfo.travelSite.description.length
 
       let restoSiteCardCounter = 0
-      let restoSiteCardCounterLimit = allCardsInfo.restoSite.description.length
+      let restoSiteCardCounterLimit = allCardsInfo.restoSite.description.length*/
 
       let trekkingSiteCardCounter = 0
       let trekkingSiteCardCounterLimit = allCardsInfo.trekkingSite.description.length
 
-      let guitaristSiteCardCounter = 0
-      let guitaristSiteCardCounterLimit = allCardsInfo.guitaristSite.description.length
+     // let guitaristSiteCardCounter = 0
+      //let guitaristSiteCardCounterLimit = allCardsInfo.guitaristSite.description.length
 
       let panthereSiteCardCounter = 0
       let panthereSiteCardCounterLimit = allCardsInfo.panthereSite.description.length
@@ -711,11 +711,11 @@
       let socialSiteCardCounter = 0
       let socialSiteCardCounterLimit = allCardsInfo.socialSite.description.length
 
-      let piqSiteCardCounter = 0
-      let piqSiteCardCounterLimit = allCardsInfo.piqSite.description.length
+     // let piqSiteCardCounter = 0
+      //let piqSiteCardCounterLimit = allCardsInfo.piqSite.description.length
 
-      let kanapSiteCardCounter = 0
-      let kanapSiteCardCounterLimit = allCardsInfo.kanapSite.description.length
+     // let kanapSiteCardCounter = 0
+    //  let kanapSiteCardCounterLimit = allCardsInfo.kanapSite.description.length
 
       //let CVSiteCardCounter = 0
       //let CVSiteCardCounterLimit = allCardsInfo.CVSite.description.length
@@ -825,7 +825,7 @@
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("trekkingCard")) })
       // document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("travelCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("piqCard")) })
-      document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("kanapCard")) })
+     // document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("kanapCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("socialCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("ecommerceCard")) })
       document.addEventListener("scroll", (e) => { isCardAlmostVisible(document.getElementById("tictactoeCard")) })
@@ -838,8 +838,8 @@
       let photographerEventExecutedYet = false
       let trekkingEventExecutedYet = false
       //let travelEventExecutedYet = false
-      let piqEventExecutedYet = false
-      let kanapEventExecutedYet = false
+    //  let piqEventExecutedYet = false
+     // let kanapEventExecutedYet = false
       let socialEventExecutedYet = false
       let ecommerceEventExecutedYet = false
       let tictactoeEventExecutedYet = false
@@ -860,13 +860,13 @@
                   }
                   /* else if (card.id == "travelCard" && travelEventExecutedYet) {
                          return
-                   }*/
+                   }
                   else if (card.id == "piqCard" && piqEventExecutedYet) {
                         return
                   }
                   else if (card.id == "kanapCard" && kanapEventExecutedYet) {
                         return
-                  }
+                  }*/
                   else if (card.id == "socialCard" && socialEventExecutedYet) {
                         return
                   }
@@ -900,7 +900,7 @@
                   /*else if (card.id == "travelCard") {
                         travelEventExecutedYet = true
                         //   console.log("travel video active")
-                  }*/
+                  }
                   else if (card.id == "piqCard") {
                         piqEventExecutedYet = true
                         //  console.log("piq video active")
@@ -908,7 +908,7 @@
                   else if (card.id == "kanapCard") {
                         kanapEventExecutedYet = true
                         //  console.log("kanap video active")
-                  }
+                  }*/
                   else if (card.id == "socialCard") {
                         socialEventExecutedYet = true
                         //  console.log("social video active")
